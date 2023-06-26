@@ -1,0 +1,15 @@
+<div class="wrapper my-4">
+  <h3>Создать новую новость</h3>
+  <form [formGroup]="newPost" (submit)="save()">
+    <div class="d-flex flex-column w-100 my-2">
+      <label class="form-label">Title:</label>
+      <input class="form-input" type="text" formControlName="title" placeholder="Title">
+    </div>
+    <div class="d-flex flex-column w-100 my-2">
+      <label>Description:</label>
+      <textarea type="text" rows="10" formControlName="description" placeholder="Description"></textarea>
+    </div>
+
+    <button class="my-2" [disabled]="newPost.invalid">Save</button>
+  </form>
+</div>

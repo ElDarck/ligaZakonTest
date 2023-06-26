@@ -1,0 +1,45 @@
+ul {
+
+  h2 {
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+    border-bottom: 1px solid #E6E8F7;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0.5rem 0;
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid #E6E8F7;
+
+    &:last-child {
+      border: none;
+    }
+
+    .image-holder {
+      display: none;
+
+      @media screen and (min-width: 600px){
+        display: block;
+        min-width: 166px;
+        height: auto;
+      }
+    }
+
+    .file-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    a {
+      color: var(--bs-body-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--bs-success);
+      }
+    }
+  }
+}

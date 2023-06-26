@@ -1,0 +1,13 @@
+<div class="main-wrapper" *ngIf="!loading">
+  <app-slider [sliderFiles]="sliderFiles"></app-slider>
+
+  <ng-container *ngIf="!selectedFile, else fileSelected">
+    <app-files-list [filesList]="files" (selectedFile)="setSelectedFile($event)"></app-files-list>
+
+    <app-create-element-form (saveNewPost)="createNewPost($event)"></app-create-element-form>
+  </ng-container>
+
+  <ng-template #fileSelected>
+    <app-file-description [file]="selectedFile"></app-file-description>
+  </ng-template>
+</div>

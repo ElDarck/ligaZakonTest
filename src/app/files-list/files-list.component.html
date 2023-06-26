@@ -1,0 +1,31 @@
+<ul class="wrapper">
+  <h2>Список новостей</h2>
+  <li *ngFor="let file of filesList" class="d-flex flex-row align-items-center">
+    <div class="image-holder">
+      <picture>
+        <source media="(min-width: 600px)" srcset="{{file?.imageSmall}}">
+        <source media="(min-width: 992px)" srcset="{{file?.imageMiddle}}">
+        <img src="{{file?.imageSource}}" alt="{{file?.image}}">
+      </picture>
+    </div>
+    <div class="file-wrapper mx-3 mt-1">
+      <div class="d-flex flex-row justify-content-start mb-2">
+        <div class="d-flex align-items-center date">
+          <mat-icon>date_range</mat-icon>
+          <span>{{file?.date | date: "dd MMMM yyyy"}}</span></div>
+        <div class="d-flex align-items-center counts">
+          <mat-icon>visibility</mat-icon>
+          <span>{{file?.viewCount}}</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column mb-2">
+        <h3>
+          <a (click)="selectFile(file)"
+            [routerLink]="['news', 'post', file?.ID]">{{file?.title}}</a>
+        </h3>
+        <div>{{file?.description}}</div>
+      </div>
+    </div>
+  </li>
+</ul>

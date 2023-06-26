@@ -1,0 +1,29 @@
+<div class="wrapper description-wrapper mt-2" *ngIf="file">
+  <div class="mb-3 pb-2 border-bottom">
+    <h2 class="">{{file.title}}</h2>
+
+    <div class="d-flex flex-row justify-content-start mb-2">
+
+      <div class="d-flex align-items-center date">
+        <mat-icon>date_range</mat-icon>
+        <span>{{file?.date | date: "dd MMMM yyyy"}}</span></div>
+      <div class="d-flex align-items-center counts">
+        <mat-icon>visibility</mat-icon>
+        <span>{{file?.viewCount}}</span>
+      </div>
+
+      <div class="d-flex align-items-center comments">
+        <mat-icon>mode_comment</mat-icon>
+        <span>{{file?.commentsCount}}</span>
+      </div>
+    </div>
+  </div>
+
+  <p>{{file.description}}</p>
+
+</div>
+
+<button class="back-btn mt-2 d-flex flex-row" [routerLink]="['news']">
+  <mat-icon>arrow_back</mat-icon>
+  <span>Назад</span>
+</button>
